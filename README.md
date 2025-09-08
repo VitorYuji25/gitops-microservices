@@ -85,7 +85,7 @@ Verifique os pods:
 kubectl get pods -n argocd
 ```
 
-Etapa 3: Acessando a Interface do ArgoCD
+## Etapa 3: Acessando a Interface do ArgoCD
 
 Expose o serviço do ArgoCD:
 ```bash
