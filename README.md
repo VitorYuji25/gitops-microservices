@@ -89,10 +89,10 @@ kubectl get pods -n argocd
 
 Expose o serviço do ArgoCD:
 ```bash
-kubectl port-forward svc/argocd-server -n argocd 8080:443
+kubectl port-forward svc/argocd-server -n argocd 8081:443
 ```
 
-Abra https://localhost:8080
+Abra https://localhost:8081
  e faça login:
 
 Usuário: admin
