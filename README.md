@@ -44,7 +44,6 @@ Antes de começar, garanta que você tenha as seguintes ferramentas instaladas e
 ---
 
 ## Etapa 1: Preparando o Repositório no GitHub
-Vamos criar o repositório que será a **"fonte da verdade"** para o ArgoCD.
 
 1. Faça o **Fork** do repositório original:  
    👉 [GoogleCloudPlatform/microservices-demo](https://github.com/GoogleCloudPlatform/microservices-demo)
@@ -155,7 +154,7 @@ Verifique se o cluster está no ar. Abra um novo terminal e execute o comando:
 kubectl get nodes
 ```
 
-Você deve ver o seu nó com o status Ready, confirmando que o cluster Kubernetes está ativo e pronto para receber comandos.
+Ver se o nó está com o status Ready, confirmando que o cluster Kubernetes está ativo e pronto para receber comandos.
 
 ### Passo 2: Verificar o Status das Aplicações (ArgoCD e Online Boutique)
 Quando o Kubernetes inicia, ele automaticamente tenta restaurar o último estado conhecido. Isso significa que ele tentará iniciar todos os pods do ArgoCD e da sua aplicação "Online Boutique" por conta própria.
@@ -171,13 +170,13 @@ Verifique os pods da sua aplicação:
 ```bash
 kubectl get pods -n default
 ```
-Você deverá ver os pods da sua loja (frontend-xxxxx, cartservice-xxxxx, etc.) com o status Running. Se eles estiverem como ContainerCreating ou Pending, aguarde mais alguns minutos.
+Ver os pods da loja (frontend-xxxxx, cartservice-xxxxx, etc.) com o status Running. Se eles estiverem como ContainerCreating ou Pending, aguarde mais alguns minutos.
 
 ### Passo 3: Recriar os Túneis de Acesso (port-forward)
-Os comandos port-forward são temporários e só funcionam enquanto o terminal que os executa está aberto. Como você fechou os terminais, você precisa executá-los novamente.
+Os comandos port-forward são temporários e só funcionam enquanto o terminal que os executa está aberto. Como os terminais foram fechados, você precisa executá-los novamente.
 
 Abra um terminal para o ArgoCD:
-Execute o comando para criar o túnel para a interface do ArgoCD. Lembre-se de deixar este terminal aberto.
+Execute o comando para criar o túnel para a interface do ArgoCD. E deixar este terminal aberto.
 
 ```bash
 kubectl port-forward svc/argocd-server -n argocd 8081:443
@@ -190,7 +189,7 @@ Execute o comando para criar o túnel para a sua aplicação. Este terminal tamb
 ```bash
 kubectl port-forward svc/frontend 7000:80
 ```
-Agora você pode acessar sua loja no navegador em http://localhost:7000.
+Agora você pode acessar a loja no navegador em http://localhost:7000.
 
 Resumo Rápido
 Para subir tudo novamente, o processo é:
