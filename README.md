@@ -15,7 +15,6 @@ A aplicação é executada localmente usando o **Rancher Desktop**.
 - [Etapa 3: Acessando a Interface do ArgoCD](#etapa-3-acessando-a-interface-do-argocd)
 - [Etapa 4: Criando a Aplicação no ArgoCD](#etapa-4-criando-a-aplicação-no-argocd)
 - [Etapa 5: Acessando o Front-end da Aplicação](#etapa-5-acessando-o-front-end-da-aplicação)
-- [Opcional: Testando o Fluxo GitOps](#opcional-testando-o-fluxo-gitops)
 
 ---
 
@@ -170,7 +169,7 @@ Verifique os pods da sua aplicação:
 ```bash
 kubectl get pods -n default
 ```
-Ver os pods da loja (frontend-xxxxx, cartservice-xxxxx, etc.) com o status Running. Se eles estiverem como ContainerCreating ou Pending, aguarde mais alguns minutos.
+Ver os pods da loja estão com o status Running. Se eles estiverem como ContainerCreating ou Pending, aguarde mais um pouco.
 
 ### Passo 3: Recriar os Túneis de Acesso (port-forward)
 Os comandos port-forward são temporários e só funcionam enquanto o terminal que os executa está aberto. Como os terminais foram fechados, você precisa executá-los novamente.
@@ -183,6 +182,8 @@ kubectl port-forward svc/argocd-server -n argocd 8081:443
 ```
 Agora você já pode acessar a interface do ArgoCD em https://localhost:8081.
 
+A escolha da porta :8081 foi motivada pela utilização padrão de outras aplicações com preferência pela porta :8080, o que a deixa mais sujeita a conflitos. Assim, uma alternativa viável seria a porta :8081.
+
 Abra um SEGUNDO terminal para o Frontend da Loja:
 Execute o comando para criar o túnel para a sua aplicação. Este terminal também precisa ficar aberto.
 
@@ -191,7 +192,7 @@ kubectl port-forward svc/frontend 7000:80
 ```
 Agora você pode acessar a loja no navegador em http://localhost:7000.
 
-Resumo Rápido
+## Resumo Rápido
 Para subir tudo novamente, o processo é:
 
 1. Abra o Rancher Desktop e espere ele iniciar.
