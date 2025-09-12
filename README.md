@@ -165,6 +165,8 @@ kubectl get pods -n argocd
 ```
 Espere até que todos os pods estejam com o status Running.
 
+
+
 Verifique os pods da sua aplicação:
 ```bash
 kubectl get pods -n default
