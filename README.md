@@ -191,6 +191,8 @@ Agora você já pode acessar a interface do ArgoCD em https://localhost:8081.
 
 A escolha da porta :8081 foi motivada pela utilização padrão de outras aplicações com preferência pela porta :8080, o que a deixa mais sujeita a conflitos. Assim, uma alternativa viável seria a porta :8081.
 
+![Pagina do Argo](/imagens/Argo.png)
+
 Abra um SEGUNDO terminal para o Frontend da Loja:
 Execute o comando para criar o túnel para a sua aplicação. Este terminal também precisa ficar aberto.
 
@@ -198,6 +200,8 @@ Execute o comando para criar o túnel para a sua aplicação. Este terminal tamb
 kubectl port-forward svc/frontend 7000:80
 ```
 Agora você pode acessar a loja no navegador em http://localhost:7000.
+
+![Boutique Online](/imagens/loja-online.png)
 
 ## Resumo Rápido
 Para subir tudo novamente, o processo é:
