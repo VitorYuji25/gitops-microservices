@@ -155,6 +155,7 @@ kubectl get nodes
 
 Ver se o nó está com o status Ready, confirmando que o cluster Kubernetes está ativo e pronto para receber comandos.
 
+
 ### Passo 2: Verificar o Status das Aplicações (ArgoCD e Online Boutique)
 Quando o Kubernetes inicia, ele automaticamente tenta restaurar o último estado conhecido. Isso significa que ele tentará iniciar todos os pods do ArgoCD e da sua aplicação "Online Boutique" por conta própria.
 
@@ -165,6 +166,8 @@ kubectl get pods -n argocd
 ```
 Espere até que todos os pods estejam com o status Running.
 
+![Consulta de pods no namespace argocd](/imagens/Consulta1.png)
+
 
 
 Verifique os pods da sua aplicação:
@@ -172,6 +175,8 @@ Verifique os pods da sua aplicação:
 kubectl get pods -n default
 ```
 Ver os pods da loja estão com o status Running. Se eles estiverem como ContainerCreating ou Pending, aguarde mais um pouco.
+
+![Consulta de pods no namespace default](/imagens/Consulta2.png)
 
 ### Passo 3: Recriar os Túneis de Acesso (port-forward)
 Os comandos port-forward são temporários e só funcionam enquanto o terminal que os executa está aberto. Como os terminais foram fechados, você precisa executá-los novamente.
